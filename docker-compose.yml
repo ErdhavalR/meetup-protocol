@@ -1,0 +1,11 @@
+services:
+  meetup:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - '8080:8080'
+    volumes:
+      - meetup_data:/app/data
+volumes:
+  meetup_data:
